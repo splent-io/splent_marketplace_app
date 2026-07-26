@@ -31,6 +31,7 @@ features = [
     "splent-io/splent_feature_session_filesystem",
     "splent-io/splent_feature_marketplace",
     "splent-io/splent_feature_configurator",
+    "splent-io/splent_feature_skin_store",
 ]
 features_dev = [
     "splent-io/splent_feature_admin",
