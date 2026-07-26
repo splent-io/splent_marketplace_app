@@ -1,0 +1,84 @@
+{
+  "schema_version": "1",
+  "features": {
+    "splent_io/splent_feature_theme": {
+      "namespace": "splent_io",
+      "name": "splent_feature_theme",
+      "version": null,
+      "mode": "editable",
+      "state": "active",
+      "declared_at": "2026-07-26T15:20:41+00:00",
+      "installed_at": "2026-07-26T15:24:42+00:00",
+      "migrated_at": null,
+      "updated_at": "2026-07-26T15:25:19+00:00"
+    },
+    "splent_io/splent_feature_settings": {
+      "namespace": "splent_io",
+      "name": "splent_feature_settings",
+      "version": null,
+      "mode": "editable",
+      "state": "active",
+      "declared_at": "2026-07-26T15:20:42+00:00",
+      "installed_at": "2026-07-26T15:24:46+00:00",
+      "migrated_at": null,
+      "updated_at": "2026-07-26T15:25:19+00:00"
+    },
+    "splent_io/splent_feature_auth": {
+      "namespace": "splent_io",
+      "name": "splent_feature_auth",
+      "version": null,
+      "mode": "editable",
+      "state": "active",
+      "declared_at": "2026-07-26T15:20:43+00:00",
+      "installed_at": "2026-07-26T15:24:50+00:00",
+      "migrated_at": null,
+      "updated_at": "2026-07-26T15:25:20+00:00"
+    },
+    "splent_io/splent_feature_session_filesystem": {
+      "namespace": "splent_io",
+      "name": "splent_feature_session_filesystem",
+      "version": null,
+      "mode": "editable",
+      "state": "active",
+      "declared_at": "2026-07-26T15:20:45+00:00",
+      "installed_at": "2026-07-26T15:24:54+00:00",
+      "migrated_at": null,
+      "updated_at": "2026-07-26T15:25:20+00:00"
+    },
+    "splent_io/splent_feature_marketplace": {
+      "namespace": "splent_io",
+      "name": "splent_feature_marketplace",
+      "version": null,
+      "mode": "editable",
+      "state": "active",
+      "declared_at": "2026-07-26T15:20:46+00:00",
+      "installed_at": "2026-07-26T15:24:58+00:00",
+      "migrated_at": null,
+      "updated_at": "2026-07-26T15:25:20+00:00"
+    },
+    "splent_io/splent_feature_configurator": {
+      "namespace": "splent_io",
+      "name": "splent_feature_configurator",
+      "version": null,
+      "mode": "editable",
+      "state": "active",
+      "declared_at": "2026-07-26T15:20:47+00:00",
+      "installed_at": "2026-07-26T15:25:02+00:00",
+      "migrated_at": null,
+      "updated_at": "2026-07-26T15:25:20+00:00"
+    },
+    "splent_io/splent_feature_admin": {
+      "namespace": "splent_io",
+      "name": "splent_feature_admin",
+      "version": null,
+      "mode": "editable",
+      "state": "active",
+      "declared_at": "2026-07-26T15:25:20+00:00",
+      "installed_at": "2026-07-26T15:25:20+00:00",
+      "migrated_at": null,
+      "updated_at": "2026-07-26T15:25:20+00:00"
+    }
+  },
+  "product": "splent_marketplace_app",
+  "updated_at": "2026-07-26T15:25:20+00:00"
+}
