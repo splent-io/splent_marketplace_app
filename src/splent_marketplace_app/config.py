@@ -27,8 +27,8 @@ class _SiteConfig:
 
     SITE_NAME = "SPLENT Marketplace"
     SITE_TAGLINE = (
-        "Reusable features and product lines for SPLENT products — "
-        "search, inspect and install with one command."
+        "Reusable features and product lines for SPLENT products. "
+        "Search, inspect and install with one command."
     )
     SITE_SOCIAL = [
         {"network": "GitHub", "href": "https://github.com/splent-io"},
