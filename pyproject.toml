@@ -32,6 +32,7 @@ features = [
     "splent-io/splent_feature_marketplace",
     "splent-io/splent_feature_configurator",
     "splent-io/splent_feature_skin_store",
+    "splent-io/splent_feature_signup",
 ]
 features_dev = [
     "splent-io/splent_feature_admin",
