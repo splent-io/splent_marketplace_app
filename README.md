@@ -1,28 +1,86 @@
 # splent_marketplace_app
 
-The SPLENT marketplace web application — built with SPLENT itself.
+A web application built with SPLENT, derived from the `marketplace_spl` product line.
 
-This product is the visual front of the marketplace: it consumes the same
-`index.json` that the `splent` CLI uses (see
-[splent_index](https://github.com/splent-io/splent_index)) and helps you
-**choose** features, not just list them:
+This repository is a thin shell. It declares which features the product installs
+(see `pyproject.toml`) and SPLENT composes, validates and runs them.
 
-- Catalog with categories, archetypes and real contract data
-  (provides / requires / used by), straight from each feature's
-  auto-generated `[tool.splent.contract]`.
-- Dependency graph per feature: hard requirements, soft (optional)
-  integrations, reverse dependencies, and provides collisions.
-- UVL-driven configurator: pick an SPL, select features with live
-  validity checking against the variability model (mandatory groups,
-  alternatives, constraints), and get the exact `splent` commands to
-  build your product.
+## Run it locally
 
-The marketplace stores no package data of its own — the index is a
-regenerable cache of the feature contracts, and publishing a feature is
-`splent feature:release`. The app's own database only holds what is
-genuinely the marketplace's: users, favourites, metrics and curation.
+Your machine only needs **Docker**, **Git** and **GNU Make**. Python, Node and
+the database all live inside containers, so nothing else has to be installed.
 
-## Status
+### 1. Create a workspace
 
-Product scaffolding in progress (SPLENT product derived from the SPL
-workflow: `product:create` → feature selection → `product:derive`).
+A SPLENT product is not standalone. It lives in a workspace folder next to the
+SPLENT tooling repositories.
+
+```bash
+mkdir splent_workspace && cd splent_workspace
+git clone https://github.com/diverso-lab/splent_framework.git
+git clone https://github.com/diverso-lab/splent_cli.git
+git clone https://github.com/splent-io/splent_catalog.git
+git clone https://github.com/splent-io/splent_marketplace_app.git
+```
+
+### 2. Check your Git config file
+
+The CLI container mounts your `~/.gitconfig`. If that file does not exist,
+Docker creates it as an empty directory and installing features fails later.
+Create it once as a real file.
+
+```bash
+rm -rf ~/.gitconfig && touch ~/.gitconfig
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
+### 3. Start the SPLENT CLI
+
+```bash
+cd splent_cli
+make setup
+```
+
+That prepares the workspace `.env`, starts the CLI container and drops you
+inside it. Every `splent` command below runs in there. From the host you can
+also use `docker exec splent_cli_container splent <command>`.
+
+### 4. Bring the product up
+
+```bash
+splent product:select splent_marketplace_app
+splent product:resolve        # install the features declared in pyproject.toml
+splent product:derive --dev   # build images, run migrations, start the stack
+splent db:seed -y             # load demo data, optional
+```
+
+The first derive downloads images and compiles assets, so give it a few minutes.
+When it finishes the app is served at <http://localhost:5818>, and
+`splent product:port` prints that URL again whenever you need it.
+
+## Everyday commands
+
+| Command | What it does |
+|---------|--------------|
+| `splent product:up --dev` | Start the stack |
+| `splent product:down --dev` | Stop the stack |
+| `splent product:restart` | Restart the Flask app |
+| `splent product:logs` | Tail the container logs |
+| `splent product:console` | Python shell with the app loaded |
+| `splent feature:status` | Features installed in this product |
+| `splent db:migrate` | Generate and apply a migration |
+| `splent product:port` | Print the local URL |
+
+## When something looks wrong
+
+```bash
+splent product:validate   # model satisfiable, contracts compatible, imports fine
+splent doctor             # full workspace diagnosis
+```
+
+## Documentation
+
+Everything else, from the feature catalog and the UVL variability model to the
+full command reference and deployment, lives at
+[docs.splent.io](https://docs.splent.io).
