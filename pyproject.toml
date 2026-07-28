@@ -25,6 +25,8 @@ core = [
 [tool.splent]
 cli_version = "1.14.0"
 features = [
+    "splent-io/splent_feature_apikeys",
+    "splent-io/splent_feature_spl_registry",
     "splent-io/splent_feature_theme",
     "splent-io/splent_feature_settings",
     "splent-io/splent_feature_auth",
