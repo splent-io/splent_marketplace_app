@@ -31,10 +31,10 @@ features = [
     "splent_io/splent_feature_settings@v0.2.1",
     "splent_io/splent_feature_auth@v1.6.2",
     "splent_io/splent_feature_session_filesystem@v1.1.1",
-    "splent_io/splent_feature_marketplace@v0.1.1",
     "splent_io/splent_feature_configurator@v0.1.0",
     "splent_io/splent_feature_skin_store@v0.1.1",
     "splent_io/splent_feature_signup@v0.1.0",
+    "splent_io/splent_feature_marketplace@v0.2.0",
 ]
 features_dev = [
     "splent_io/splent_feature_admin@v1.1.1",
